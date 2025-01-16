@@ -69,7 +69,7 @@ export function Experience() {
 
       {/* ---------------------------------------------------- */}
       {/* <primitive object={model.scene} scale={0.35} /> */}
-      <primitive object={model.scene} scale={6} position={[2, -1.41, 2]} />
+      <primitive object={model.scene} scale={8} position={[2, -1.57, 2]} />
     </>
   );
 }
