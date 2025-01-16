@@ -36,9 +36,7 @@ export function App() {
           // zoom: 100,
         }}
         // orthographic
-        // we don't need this if we are using ContactShadows
-        // shadows={false}
-        // shadows
+        shadows
       >
         <color args={["blanchedalmond"]} attach={"background"} />
         <Experience />
