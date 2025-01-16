@@ -10,7 +10,7 @@ import { Perf } from "r3f-perf";
 import { useControls } from "leva";
 
 export function Experience() {
-  // const someControls = useControls("_", {});
+  const someControls = useControls("_", { test: 1 });
 
   const cubeRef = useRef<Mesh>(null);
   const sphereRef = useRef<Mesh>(null);
@@ -38,12 +38,12 @@ export function Experience() {
 
       {/* CUBE */}
 
-      <mesh position={[2, 0, 0]} ref={cubeRef} castShadow>
+      <mesh position={[2, 0, 0]} ref={cubeRef} scale={1.5} castShadow>
         <boxGeometry args={[1, 1, 1]} />
         <meshStandardMaterial color="mediumpurple" />
       </mesh>
       {/* SPHERE */}
-      <mesh position={[-2, 0, 0]} ref={sphereRef} scale={0.8} castShadow>
+      <mesh position={[-2, 0, 0]} ref={sphereRef} castShadow>
         <sphereGeometry args={[1, 16, 16]} />
         <meshStandardMaterial args={[{ color: "orange" }]} />
       </mesh>
