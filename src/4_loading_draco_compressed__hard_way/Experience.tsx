@@ -17,7 +17,8 @@ export function Experience() {
   // draco compressed
   const model = useLoader(
     GLTFLoader,
-    "/models/my_donut/my_donut-compressed.glb",
+    // "/models/my_donut/my_donut-compressed.glb",
+    "/models/my_donut/donuts-c-2.glb",
     (loader) => {
       const dracoLoader = new DRACOLoader();
       dracoLoader.setDecoderPath("/draco/");

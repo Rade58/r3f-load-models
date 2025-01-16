@@ -3,8 +3,8 @@ import { Experience } from "./Experience";
 import {
   CineonToneMapping,
   // ReinhardToneMapping,
-  // ACESFilmicToneMapping,
-  // SRGBColorSpace,
+  ACESFilmicToneMapping,
+  SRGBColorSpace,
   // LinearSRGBColorSpace,
   // Color,
 } from "three";
@@ -17,15 +17,14 @@ export function App() {
       <Canvas
         // onCreated={created}
         // dpr={[1, 2]}
-        // flat
-        gl={
-          {
-            // antialias: true,
-            // toneMapping: CineonToneMapping,
-            // outputColorSpace: SRGBColorSpace,
-            // toneMappingExposure: 2,
-          }
-        }
+        flat
+        gl={{
+          // antialias: true,
+          toneMapping: CineonToneMapping,
+          // toneMapping: ACESFilmicToneMapping,
+          outputColorSpace: SRGBColorSpace,
+          toneMappingExposure: 1.5,
+        }}
         camera={{
           fov: 45,
           near: 0.1,
