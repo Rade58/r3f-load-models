@@ -10,7 +10,7 @@ import {
 
 import { Perf } from "r3f-perf";
 
-import { useControls } from "leva";
+// import { useControls } from "leva";
 
 import { Suspense } from "react";
 import { Placeholder } from "./Placeholder";
@@ -24,7 +24,7 @@ export function Experience() {
   // console.log({ model });
   // -----------------------------------------------------------
 
-  const someControls = useControls("_", { test: 1 });
+  // const someControls = useControls("_", { test: 1 });
 
   // const cubeRef = useRef<Mesh>(null);
   // const sphereRef = useRef<Mesh>(null);

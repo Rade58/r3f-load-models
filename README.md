@@ -109,3 +109,17 @@ we need to fix this with changing `shadowBias` or `bias` on directionalLight in 
 We used well known fox model from khronos group
 
 We created Fox component: `src/11_animation/Fox.tsx`
+
+## Playing the animation
+
+`useAnimation` hook
+
+Use `useEffect` hook to start playing animation, when component accomplished its first render, that way we are sure that model is loaded and that we can play animation on it
+
+useAnimation and r3f will take care of updating the animation on each frame
+
+## Using crossFadeFrom
+
+we already tried this in some previous workshop but it is really handy
+
+we used timeout to change animation after some time with help of this method
