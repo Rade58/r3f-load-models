@@ -27,6 +27,8 @@ export function Fox(props: any) {
   // This is only a solution when I'm doing leva
   // I don't like to relly on rerenders
 
+  // since use effect will rerendr this component
+
   // Would never use something like this in real word example
   // todo:
   // rewrite this with xstate
@@ -34,14 +36,15 @@ export function Fox(props: any) {
   useEffect(() => {
     const action = animApi.actions[foxControls.animation.value];
     if (action !== null) {
-      action.fadeIn(0.5).play();
+      action.reset().fadeIn(0.5).play();
     }
 
     return () => {
       // console.log("disposre");
 
       if (action !== null) {
-        action.fadeOut(0.5).stop();
+        action.fadeOut(0.5);
+        // .stop();
       }
     };
   }, [foxControls.animation]);
