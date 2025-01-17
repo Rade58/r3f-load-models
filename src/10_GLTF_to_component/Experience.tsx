@@ -14,8 +14,10 @@ import { useControls } from "leva";
 // import { DRACOLoader, GLTFLoader } from "three/examples/jsm/Addons.js";
 
 // import { DRACOLoader, GLTFLoader } from "three/examples/jsm/Addons.js";
-import { Donuts } from "./Donuts";
+// import { Donuts } from "./Donuts";
 import { DonutsParts } from "./DounutsParts";
+import { Suspense } from "react";
+import { Placeholder } from "./Placeholder";
 
 export function Experience() {
   // -----------------------------------------------------------
@@ -47,7 +49,13 @@ export function Experience() {
       <OrbitControls makeDefault />
 
       {/* ---------------------------------- */}
-      <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
+      <directionalLight
+        // shadow={{ normalBias: 0.04 }}
+        shadow-normalBias={0.04}
+        castShadow
+        position={[1, 2, 3]}
+        intensity={1.5}
+      />
       <ambientLight intensity={0.5} />
       {/* ---------------------------------- */}
 
@@ -69,8 +77,9 @@ export function Experience() {
       {/* <primitive object={model.scene} scale={8} position={[2, -1.57, 2]} /> */}
 
       {/* <Donuts /> */}
-
-      <DonutsParts />
+      <Suspense fallback={<Placeholder position-y={0.5} scale={[2, 3, 2]} />}>
+        <DonutsParts scale={9} position-y={-1.57} />
+      </Suspense>
     </>
   );
 }

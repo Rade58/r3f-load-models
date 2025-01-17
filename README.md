@@ -88,7 +88,7 @@ see: src/10_GLTF_to_component/DounutsParts.tsx
 
 **Now you can add your new component an manipulate with individial meshes**
 
-### Problem
+### Problem with `https://gltf.pmnd.rs/`
 
 using this changed my model a bit
 
@@ -96,4 +96,10 @@ Materials look bad, some geometry is messed
 
 Maybe because of nature of my model, of modifiers I used in blender
 
-todo: Find out why is this happening
+### Problem is something called shadow acne
+
+Because model is casting shadow on itself
+
+we need to fix this with changing `shadowBias` or `bias` on directionalLight in src/10_GLTF_to_component/Experience.tsx component
+
+### I also change position of some of indivudual meshes
