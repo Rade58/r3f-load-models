@@ -1,36 +1,21 @@
-import { Suspense } from "react";
-// import { useFrame, useLoader } from "@react-three/fiber";
+// import { useLoader } from "@react-three/fiber";
 
 // import { type Mesh } from "three";
 
-import { OrbitControls, Stage } from "@react-three/drei";
+import { OrbitControls, Stage, useGLTF } from "@react-three/drei";
 
 import { Perf } from "r3f-perf";
 
 import { useControls } from "leva";
+// import { DRACOLoader, GLTFLoader } from "three/examples/jsm/Addons.js";
 
 // import { DRACOLoader, GLTFLoader } from "three/examples/jsm/Addons.js";
-import { MyModel } from "./MyModel";
-import { Placeholder } from "./Placeholder";
+import { Donuts } from "./Donuts";
 
 export function Experience() {
   // -----------------------------------------------------------
 
-  //  WE MOVED ALL OF THIS BLOCKING CODE TO MyModel
-  // COMPONENT
-  // const model = useLoader(GLTFLoader, "/models/my_hamburger/hamburger.glb");
-  /* const model = useLoader(
-    GLTFLoader,
-    // draco compressed
-    // "/models/my_donut/donuts-c-2.glb",
-    // bigger model in order to be loaded much slower
-    "/models/FlightHelmet/glTF/FlightHelmet.gltf",
-    (loader) => {
-      const dracoLoader = new DRACOLoader();
-      dracoLoader.setDecoderPath("/draco/");
-      loader.setDRACOLoader(dracoLoader);
-    }
-  ); */
+  // const model = useGLTF("/models/my_donut/donuts-c-2.glb");
 
   // console.log({ model });
   // -----------------------------------------------------------
@@ -77,14 +62,8 @@ export function Experience() {
       {/* <primitive object={model.scene} scale={0.35} /> */}
       {/* for donuts */}
       {/* <primitive object={model.scene} scale={8} position={[2, -1.57, 2]} /> */}
-      {/* for helmet */}
 
-      {/* This is now in MyModel */}
-      {/* <primitive object={model.scene} scale={5} position={[0, -1, 0]} /> */}
-
-      <Suspense fallback={<Placeholder scale={[2, 3, 2]} position-y={0.5} />}>
-        <MyModel />
-      </Suspense>
+      <Donuts />
     </>
   );
 }
