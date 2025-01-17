@@ -53,3 +53,47 @@ WE use `Clone` component multiple times to clone model
 This is good for performances.
 
 Don't load same model multiple times, use this instead
+
+# GLTF to component (gltfjsx)
+
+If we want to manipulate the different parts of our donuts, we need to traverse the loaded model, search for the right child, save it in some ways, and apply whatever we need to it
+
+We can traverse the scene of the model to find right mesh
+
+We can go back to blender and make a change
+
+But what we are going to use is `GLTF -> React Three Fiber`
+
+See here: <https://github.com/pmndrs/gltfjsx>
+
+online version: <https://gltf.pmnd.rs/>
+
+we will use online version
+
+### Converting the model
+
+just upload your model
+
+you can see leva where you can pick what you want, I just selected shadows
+
+### Copy generated component code
+
+see: src/10_GLTF_to_component/DounutsParts.tsx
+
+### Refactor it
+
+you need to change path in your copied code since generated code, doesn't point right to your model
+
+see: src/10_GLTF_to_component/DounutsParts.tsx
+
+**Now you can add your new component an manipulate with individial meshes**
+
+### Problem
+
+using this changed my model a bit
+
+Materials look bad, some geometry is messed
+
+Maybe because of nature of my model, of modifiers I used in blender
+
+todo: Find out why is this happening

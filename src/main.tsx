@@ -11,7 +11,8 @@ import "./index.css";
 // import { App } from "./6_lazy_loading/App";
 // import { App } from "./7_gltf_loading_with_drei/App";
 // import { App } from "./8_preloading/App";
-import { App } from "./9_cloning_models/App";
+// import { App } from "./9_cloning_models/App";
+import { App } from "./10_GLTF_to_component/App";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

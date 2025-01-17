@@ -1,31 +1,28 @@
-import { useRef } from "react";
-import { useFrame, useLoader } from "@react-three/fiber";
+// import { useLoader } from "@react-three/fiber";
 
-import { type Mesh } from "three";
+// import { type Mesh } from "three";
 
-import { OrbitControls, Stage } from "@react-three/drei";
+import {
+  OrbitControls,
+  // Stage,
+  //  useGLTF,
+} from "@react-three/drei";
 
 import { Perf } from "r3f-perf";
 
 import { useControls } from "leva";
+// import { DRACOLoader, GLTFLoader } from "three/examples/jsm/Addons.js";
 
-import { DRACOLoader, GLTFLoader } from "three/examples/jsm/Addons.js";
+// import { DRACOLoader, GLTFLoader } from "three/examples/jsm/Addons.js";
+import { Donuts } from "./Donuts";
+import { DonutsParts } from "./DounutsParts";
 
 export function Experience() {
   // -----------------------------------------------------------
-  // const model = useLoader(GLTFLoader, "/models/my_hamburger/hamburger.glb");
-  // draco compressed
-  const model = useLoader(
-    GLTFLoader,
-    "/models/my_donut/donuts-c-2.glb",
-    (loader) => {
-      const dracoLoader = new DRACOLoader();
-      dracoLoader.setDecoderPath("/draco/");
-      loader.setDRACOLoader(dracoLoader);
-    }
-  );
 
-  console.log({ model });
+  // const model = useGLTF("/models/my_donut/donuts-c-2.glb");
+
+  // console.log({ model });
   // -----------------------------------------------------------
 
   const someControls = useControls("_", { test: 1 });
@@ -68,7 +65,12 @@ export function Experience() {
 
       {/* ---------------------------------------------------- */}
       {/* <primitive object={model.scene} scale={0.35} /> */}
-      <primitive object={model.scene} scale={8} position={[2, -1.57, 2]} />
+      {/* for donuts */}
+      {/* <primitive object={model.scene} scale={8} position={[2, -1.57, 2]} /> */}
+
+      {/* <Donuts /> */}
+
+      <DonutsParts />
     </>
   );
 }
