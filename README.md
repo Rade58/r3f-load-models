@@ -103,3 +103,9 @@ Because model is casting shadow on itself
 we need to fix this with changing `shadowBias` or `bias` on directionalLight in src/10_GLTF_to_component/Experience.tsx component
 
 ### I also change position of some of indivudual meshes
+
+# Dealing with animations
+
+We used well known fox model from khronos group
+
+We created Fox component: `src/11_animation/Fox.tsx`
